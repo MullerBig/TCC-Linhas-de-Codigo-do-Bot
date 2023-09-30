@@ -1,0 +1,52 @@
+import random
+
+import discord
+from discord import app_commands
+
+id_do_servidor =  1155939130652491828
+
+class client(discord.Client):
+    def __init__(self):
+        super().__init__(intents=discord.Intents.default())
+        self.synced = False 
+
+    async def on_ready(self):
+        await self.wait_until_ready()
+        if not self.synced:
+          
+            await tree.sync(guild = discord.Object(id=id_do_servidor))
+          
+            self.synced = True
+        print(f"Entramos como {self.user}.")
+
+aclient = client()
+tree = app_commands.CommandTree(aclient)
+
+@tree.command(guild = discord.Object(id=id_do_servidor), name = 'ajuda', description='Carregando...') 
+
+async def slash2(interaction: discord.Interaction):
+    await interaction.response.send_message("Olá, como posso ajudar?", ephemeral = False) 
+  
+#Matéria
+@tree.command(guild = discord.Object(id=id_do_servidor), name = 'sites_para_ajudar', description='Escolha um dos sites para seus estudos') 
+async def slash3(interaction: discord.Interaction):
+    await interaction.response.send_message("(Brasil escola uol) https://brasilescola.uol.com.br/o-que-e/historia/o-que-foi-unificacao-alema.htm, (TodaMateria) https://www.todamateria.com.br/unificacao-alema/, (Historia do mundo) https://www.historiadomundo.com.br/idade-contemporanea/unificacao-alema.htm, (Wikipedia) https://pt.wikipedia.org/wiki/Unificação_da_Alemanha, (Infoescola) https://www.infoescola.com/historia/unificacao-da-alemanha/", ephemeral = False)
+    
+  
+@tree.command(guild = discord.Object(id=id_do_servidor), name = 'unificação_alemã_resumo', description='Me dê um grande resumo sobre a unificação alemã(não recomendado)') 
+async def slash4(interaction: discord.Interaction):
+    await interaction.response.send_message("A unificação alemã poderia ocorrer de duas formas. (>>>>>>) 1: Seguindo o modelo Austrico (>>>>>>) 2: Seguindo modelo Prussiano (>>>>>>) Dentre estes dois modelos, venceu o Prussiano. (>>>>>>) Mas vale ressaltar o Zollverein que foi um pacto comercial entre os reinos germânicos que excluíam o Império Austriaco. (>>>>>>) Otto Von Bismarck é o nome que deve ser lembrado quando se fala de unificação alemã. Pois ele liderou o exército prussiano anexando os Estados germânicos que se recusaram a se unir à Prússia. Desta forma ocorreram 3 guerras. (>>>>>>) 1: Guerra dos Ducados de Elba, Dinamarca versus Prússia e Áustria. a Dinamarca perde, contudo a Prússia e a Áustria tem desentendimentos sobre a separação dos territórios. (>>>>>>) 2: Austro-Prussiana. Os Prussianos e Italianos se unem contra o Império Austriaco. A vitória vai para os Italianos e Prussianos. Assim, capitulando o Império Austriaco e fazendo assim surgir o Império Austro-Hungaro. A Confederação Germânica do Norte é criada, seria um pré Império Alemão. Unindo todos os reinos do norte da germânia. (>>>>>>) 3: Franco-Prussiana. A guerra mais importante, foi travada contra a França de Napoleão III, com uma vitória gloriosa dos prussianos, e uma vergonha para os franceses. Sendo assim a precursora das guerras mundiais pois cria um sentimento de revanchismo na França. (>>>>>>) Também simplesmente cria o Império Alemão unificado.",ephemeral = False)
+
+
+
+#Perguntas
+@tree.command(guild = discord.Object(id=id_do_servidor), name = 'perguntas_da_unificação_alemã', description='Responda se conseguir') 
+async def slash4(interaction: discord.Interaction):
+  numero = random.randint(1,2)
+  
+  if numero == 1:
+    await interaction.response.send_message(f"{numero}) https://exercicios.brasilescola.uol.com.br/exercicios-historia/exercicios-sobre-unificacao-alema.htm", ephemeral = False)
+  if numero == 2:
+    await interaction.response.send_message(f"{numero}) https://exercicios.mundoeducacao.uol.com.br/exercicios-historia/exercicios-sobre-guerra-franco-prussiana.htm", ephemeral = False) 
+  
+aclient.run("MTE1NTkzODA4MTI4Nzk2MjYyNA.GfahcM.RwUkQ8GG5vIf3KanCUt5Ku3hSTAGim7IQBF40Q")
