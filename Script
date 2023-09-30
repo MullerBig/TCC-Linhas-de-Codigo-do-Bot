@@ -49,4 +49,4 @@ async def slash4(interaction: discord.Interaction):
   if numero == 2:
     await interaction.response.send_message(f"{numero}) https://exercicios.mundoeducacao.uol.com.br/exercicios-historia/exercicios-sobre-guerra-franco-prussiana.htm", ephemeral = False) 
   
-aclient.run("MTE1NTkzODA4MTI4Nzk2MjYyNA.GfahcM.RwUkQ8GG5vIf3KanCUt5Ku3hSTAGim7IQBF40Q")
+aclient.run("Token do Bot deve ser ocultado por motivos de segurança")
